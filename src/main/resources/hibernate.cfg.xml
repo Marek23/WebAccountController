@@ -36,5 +36,6 @@
 
 		<mapping class="pl.com.hom.transactions.TransactionEntity"/>
 		<mapping class="pl.com.hom.transactions.TransactionType"/>
+		<mapping class="pl.com.hom.transactions.Transaction"/>
 	</session-factory>
 </hibernate-configuration>

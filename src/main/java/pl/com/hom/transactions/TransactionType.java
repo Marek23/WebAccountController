@@ -1,12 +1,15 @@
 package pl.com.hom.transactions;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class TransactionType implements Serializable {
@@ -22,6 +25,9 @@ public class TransactionType implements Serializable {
 
 	@Column(nullable = false)
 	private String name;
+
+	@OneToMany(mappedBy = "transactionType")
+	List<Transaction> transactions = new ArrayList<Transaction>();
 
 	public int getId() {
 		return id;
@@ -67,10 +73,5 @@ public class TransactionType implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Transaction type [id=" + id + ", name=" + name + ", type =" + type + "]";
 	}
 }
