@@ -17,7 +17,7 @@ public class Tests {
 
 		TransactionType t = new TransactionType();
 		t.setName("test name");
-		t.setType("TYPE____");
+		t.setTransactionTypeId(1,"TYPE____");
 
 		Transaction out = new Transaction();
 		out.setDescription("test");
