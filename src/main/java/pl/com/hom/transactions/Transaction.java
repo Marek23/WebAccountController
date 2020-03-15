@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumns;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +27,13 @@ public class Transaction implements Serializable {
 	@ManyToOne()
 	private TransactionEntity transactionEntity;
 
-	@ManyToOne()
+	@ManyToOne
+	@JoinColumns({
+		@JoinColumn(
+			referencedColumnName = "id"),
+		@JoinColumn(
+			referencedColumnName = "type")
+	})
 	private TransactionType transactionType;
 
 	public String getExecDate() {
@@ -83,7 +91,7 @@ public class Transaction implements Serializable {
 		result = prime * result + id;
 		return result;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
