@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WebApi</name>
 	<properties>
-		<hibernate.version>4.3.6.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 	</properties>
 	<packaging>war</packaging>
 	<dependencies>
